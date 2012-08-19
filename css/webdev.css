@@ -1,0 +1,127 @@
+html,
+body,
+.container{
+  height: 100%;
+}
+body{
+  /*background: url(../img/noise.png);*/
+}
+
+.navbar-fixed-top .navbar-inner{
+  min-height: 4px;
+}
+
+.navbar-fixed-bottom{
+  height: 25px;
+}
+.navbar-fixed-bottom .navbar-inner{
+  min-height: 25px;
+  -webkit-box-shadow: inset 0 1px #CFCACA;
+  -moz-box-shadow: inset 0 1px #cfcaca;
+  box-shadow: inset 0 1px #CFCACA;
+  text-align: center;
+}
+.navbar-fixed-bottom .navbar-inner li a,
+.navbar .navbar-text{
+  padding: 5px;
+}
+#background-feature{
+  position: absolute;
+  width: 30%;
+  text-align: center;
+  padding-top: 5%;
+}
+/*#background-feature img{
+  width: 80%;
+  height: 80%;
+}*/
+
+.slider-row{
+  height: 95%;
+}
+.slide-col{
+  height: 100%;
+  border-right:2px solid #fff;
+  border-bottom:2px solid #fff;
+  background-color:#fff;
+  overflow:hidden;
+  cursor:pointer;
+  -moz-box-shadow:1px 3px 15px #555;
+  -webkit-box-shadow:1px 3px 15px #555;
+  box-shadow:3px 3px 10px #555;
+  position: relative;
+  margin-left: 0;
+  float: right;
+}
+
+.slide-1{
+  background-color: #123;
+  border-left:2px solid #fff;
+  background-image: url(../img/cv.jpg);
+  background-position: 50% bottom;
+  background-repeat: no-repeat;
+}
+.slide-2{
+  background-color: #456;
+  background-image: url(../img/html.jpg);
+  background-position: 50% bottom;
+  background-repeat: no-repeat;
+}
+.slide-3{
+  background-color: #456;
+/*  background-image: url(../img/code.jpg);
+  background-position: 50% bottom;
+  background-repeat: no-repeat;*/
+}
+.slide-4{
+  background-color: #789;
+  background-image: url(../img/contact.jpg);
+  background-position: 50% bottom;
+  background-repeat: no-repeat;
+}
+.slide-5{
+  background-color: #ABC;
+  background-image: url(../img/site.jpg);
+  background-position: 50% bottom;
+  background-repeat: no-repeat;
+}
+
+.slide-col .heading{
+  text-align: center;
+  margin-top: 100%;
+  background-color:#fff;
+  /*opacity:0.9;*/
+  text-shadow:-1px -1px 1px #ccc;
+  font-size: 26px;
+  padding: 10px 0;
+}
+
+.slide-col .description{
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  display: none;
+  width: 100%;
+  /*margin: 0 3% 5px;*/
+}
+.bgDescription{
+    background:transparent url(../img/bgDescription.png) repeat-x top left;
+    /*height:50%;*/
+    /*position:absolute;*/
+    /*bottom:0px;*/
+    /*left:0px;*/
+    /*width:100%;*/
+    /*display:none;*/
+    padding: 150px 3% 5px;
+}
+
+
+.slide-col h2{
+  /*text-align: center;*/
+/*  border-bottom: 1px solid #888;
+  border-top: 1px solid #888;*/
+  /*margin-top: 100%;*/
+  /*background-color:#fff;*/
+  /*opacity:0.9;*/
+  /*text-shadow:-1px -1px 1px #ccc;*/
+}
