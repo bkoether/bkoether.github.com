@@ -23,23 +23,25 @@ $(function() {
 
 // alert(localStorage['bkw_tweet']);
   // if empty (or not suppoprted get the latest tweet)
-  if(lastTweet == "undefined"){
+  if(typeof lastTweet === "undefined"){
+    console.log('last tweet undefined');
     // This code need s to go into node.js
     bkwTweet.fetch();
-    console.log('last tweet undefined');
+
   }
   else{
+    console.log('we have a tweet, check the date');
     // Check if one hour is up
     var lastTweetTime = localStorage['bkw_tweet_time'] + 3600;
     var now = Math.round(+new Date()/1000)
-    if (lastTweetTime < now){
-      bkwTweet.fetch();
+    if (typeof lastTweetTime === 'undefined' || lastTweetTime < now){
       console.log('time up, ask again');
+      bkwTweet.fetch();
+    }
+    else {
+      $("#twitter").html(lastTweet);
     }
   }
-
-  $("#twitter").html(localStorage['bkw_tweet']);
-
 });
 
 bkwTweet = {
@@ -47,8 +49,10 @@ bkwTweet = {
     var user = 'ben_ned';
     $.getJSON('http://api.twitter.com/1/statuses/user_timeline.json?screen_name=' + user + '&count=1&include_rts=true&callback=?',
       function(data) {
-        localStorage['bkw_tweet'] = ify.clean(data[0].text);
+        var tweet = ify.clean(data[0].text);
+        localStorage['bkw_tweet'] = tweet;
         localStorage['bkw_tweet_time'] = Math.round(+new Date()/1000);
+        $("#twitter").html(tweet);
       }
     );
   }
