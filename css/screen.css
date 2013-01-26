@@ -1230,7 +1230,7 @@ footer .share-links ul a span {
 /* line 135, ../sass/screen.scss */
 #about hgroup .avatar div img {
   width: 145px;
-  height: 154px;
+  height: 145px;
 }
 @media (min-width: 30em) {
   /* line 143, ../sass/screen.scss */
@@ -1527,7 +1527,7 @@ footer .share-links ul a span {
 /* line 336, ../sass/screen.scss */
 .contact-form input[type="text"],
 .contact-form textarea {
-  width: 100%;
+  width: 95%;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   -ms-border-radius: 3px;
