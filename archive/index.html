@@ -1,0 +1,27 @@
+---
+layout: page
+title: Archive
+---
+<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nulla vitae elit libero, a pharetra augue.</p>
+
+<div class="filter-bar">
+  {% assign tags_list = site.tags %}
+  {% include tag_list %}
+</div>
+
+
+{% for post in site.posts %}
+  <article class="archive-post-teaser{% if post.tags %} tag-{{ post.tags | join: " tag-" }}{% endif %}">
+    {% if post.img %}
+      <img src="{{post.img}}_teaser.jpg" />
+      {% assign has_img = '-img' %}
+    {% else %}
+      {% assign has_img = '' %}
+    {% endif %}
+    <div class="teaser-inner{{has_img}}">
+      <time>{{ post.date | date:'%b %d, %Y' }}</time>
+      <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+      <div class="teaser-text">{{ post.teaser }}... <a href="{{ post.url }}">&raquo;more</a></div>
+    </div>
+  </article>
+{% endfor %}

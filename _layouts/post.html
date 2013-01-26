@@ -1,0 +1,26 @@
+---
+layout: default
+---
+<article class="archive-post-full">
+  {% if page.img %}
+    <header class="graphic">
+      <div class="img-container">
+        <img src="{{page.img}}_full.jpg" />
+      </div>
+  {% else %}
+    <header class="text">
+  {% endif %}
+      <h2><span>{{ page.title}}</span></h2>
+      <div class="meta">
+        <time>{{ page.date | date: '%B' }} {{ page.date | date: '%e' }}, {{ page.date | date: '%Y' }}</time>
+        <span class="tags">
+          {% for tag in page.tags %}
+            <a href="/archive#{{ tag }}">#{{ tag }}</a>
+          {% endfor %}
+        </span>
+      </div>
+    </header>
+    <div class="post-content">
+      {{ content }}
+    </div>
+</article>

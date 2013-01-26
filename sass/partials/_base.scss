@@ -1,0 +1,116 @@
+// Grid System
+$total-columns: 10;
+$column-width: 4em;
+$gutter-width: 1em;
+$grid-padding: 1em;
+
+$break: 30em;
+$break-wide: 40em;
+
+@import 'susy';
+
+
+// Variables
+$off-white: #fefefe;
+$header-color: #3F5759;
+$link-color: #86A3A6;
+$link-hover: #384D59;
+$link-alternative: #B1A0A1;
+
+
+// Mixins
+@mixin custom-text($size){
+  font-family: 'Lato', sans-serif;
+  font-size: $size;
+}
+@mixin custom-header($size){
+  font-family: 'Raleway', sans-serif;
+  font-size: $size;
+}
+@mixin nav-button{
+  @include border-radius(5px);
+  padding: 5px;
+  margin: 15px 5px 10px;
+  border: 1px solid $off-white;
+  background-color: #000;
+  color: $off-white;
+  @include custom-header(16px);
+  text-transform: uppercase;
+  display: block;
+  text-decoration: none;
+  height: 20px;
+  @include single-transition(border-color, 0.3s, ease);
+  &:hover{
+    @include single-transition(border-color, 0.3s, ease);
+    border-color: $link-color;
+  }
+  @include at-breakpoint(0em 10 30em){
+    width: 20px;
+    span{
+      display: none;
+    }
+  }
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Raleway', sans-serif;
+  color: $header-color;
+}
+
+a{
+  text-decoration: none;
+  color: $link-color;
+  &:hover{
+    color: $link-hover;
+  }
+}
+
+
+
+// Font Icons
+@font-face {
+  font-family: 'icons';
+  src: url("../font/icons.eot");
+  src: url("../font/icons.eot?#iefix") format('embedded-opentype'), url("../font/icons.woff") format('woff'), url("../font/icons.ttf") format('truetype'), url("../font/icons.svg#icons") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: 'icons';
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+  opacity: 0.8;
+  line-height: 1em;
+  font-size: 120%;
+  color: $off-white;
+}
+
+.icon-linkedin:before {
+  content: '\4c';
+  font-size: 100%;
+  padding-left: 2px;
+ } /* 'L' */
+.icon-rss:before {
+  content: '\52';
+  font-size: 100%;
+} /* 'R' */
+.icon-twitter:before {
+  content: '\54';
+  font-size: 100%;
+  } /* 'T' */
+.icon-drupal:before {
+  content: '\e4';
+  padding: 2px 0 0 2px;
+} /* 'ä' */
+.icon-home:before { content: '\2302'; } /* '⌂' */
+.icon-mail:before { content: '\2709'; } /* '✉' */
+.icon-vcard:before { content: '\e722'; } /* '' */
+.icon-archive:before { content: '\e738'; } /* '' */

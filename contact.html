@@ -1,0 +1,43 @@
+---
+layout: page
+title: Contact
+---
+<p>I am based in Vancouver, BC. You can find/follow me on the following sites or contact me directly via the form on this page.</p>
+<div class="contact-links">
+  <ul>
+    <li><a href="#" class="drupal"><i class="icon-drupal"></i><span>Drupal</span></a></li>
+    <li><a href="#" class="linkedin"><i class="icon-linkedin"></i><span>LinkedIn</span></a></li>
+    <li><a href="#" class="twitter"><i class="icon-twitter"></i><span>Twitter</span></a></li>
+  </ul>
+</div>
+<div class="contact-form">
+  <script type="text/javascript">
+    var submitted=false;
+  </script>
+  <iframe id="hidden_iframe" name="hidden_iframe" onload="if(submitted)
+{window.location='contact-thank-you.html';}" style="display: none;"></iframe>
+
+  <form action="mailto:info@bk-webdev.com" method="POST" id="bkw-contact-form" onsubmit="submitted=true;" target="hidden_iframe">
+    <div class="field">
+      <label for="entry_0">Name</label>
+      <input type="text" name="entry.0.single" value="" class="required" id="entry_0">
+    </div>
+
+    <div class="field">
+      <label for="entry_1">Email</label>
+      <input type="text" name="entry.1.single" value="" class="required email" id="entry_1">
+    </div>
+
+    <div class="field">
+      <label for="entry_2">Message</label>
+      <textarea name="entry.2.single" rows="8" cols="75" class="required" id="entry_2"></textarea>
+    </div>
+
+    <input type="hidden" name="pageNumber" value="0">
+    <input type="hidden" name="backupCache" value="">
+
+    <div class="field">
+      <input type="submit" name="submit" value="Submit">
+    </div>
+  </form>
+</div>

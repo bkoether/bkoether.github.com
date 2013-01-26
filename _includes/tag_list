@@ -1,0 +1,13 @@
+<ul>
+  <li data-tag="all" class='active'>All</li>
+{% if tags_list.first[0] == null %}
+  {% for tag in tags_list %}
+      <li data-tag="{{ tag }}">{{ tag }}</li>
+    {% endfor %}
+{% else %}
+  {% for tag in tags_list %}
+    <li data-tag="{{ tag[0] }}">{{ tag[0] }}</li>
+  {% endfor %}
+{% endif %}
+</ul>
+{% assign tags_list = nil %}

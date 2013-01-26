@@ -1,0 +1,396 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@import "compass";
+@import "partials/normalize";
+@import "partials/h5bp";
+@import "partials/base";
+// @import "icons/*.png";
+
+body{
+  background: url(../img/classy_fabric.png);
+  @include custom-text(16px);
+}
+
+#page{
+  @include container($total-columns);
+  // @include susy-grid-background;
+}
+
+#navbar{
+  ul {
+    @include inline-block-list;
+    @include float-right;
+    a{
+      @include nav-button;
+      margin-right: 0;
+    }
+  }
+  #home-link{
+    @include float-left;
+    a{
+      @include nav-button;
+      margin-left: 0;
+    }
+  }
+}
+
+#main{
+  @include span-columns(10 omega, 10);
+
+
+  // @include squish(1,1);
+  @include border-radius(3px);
+  @include single-box-shadow;
+  background-color: $off-white;
+  .wrap{
+    @include single-box-shadow(#999, 0px, 1px, 5px, 0, true);
+    @include border-radius(10px);
+    margin: 10px;
+    background: url(../img/cream_dust.png) transparent;
+  }
+}
+
+footer{
+  .copyright{
+    font-size: 12px;
+    color: #eee;
+    padding-top: 14px;
+    @include float-left;
+  }
+  .share-links{
+    padding-top: 10px;
+    margin-bottom: 10px;
+    @include float-right;
+    ul{
+      margin-right: 10px;
+      @include inline-block-list;
+      a{
+        @include border-radius(3px);
+        @include single-transition(background-color, 0.3s, ease);
+        overflow: hidden;
+        width: 23px;
+        height: 23px;
+        text-align: center;
+        display: block;
+        border: 1px solid $off-white;
+        &:hover{
+          @include single-transition(background-color, 0.3s, ease);
+          background-color: #4eade7;
+        }
+        &.linkedin:hover{
+          background-color: #ccda2b;
+        }
+        &.rss:hover{
+          background-color: orange;
+        }
+        span{
+          @include squish-text();
+        }
+      }
+    }
+  }
+}
+
+#homepage{
+  padding-top: 40px;
+  .avatar{
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    @include border-radius(150px);
+    border: 10px solid $off-white;
+    @include single-box-shadow(#999, 0px, 1px, 5px);
+  }
+
+  .intro{
+    text-align: center;
+    padding: 40px 0;
+    @include custom-header(22px);
+    line-height: 24px;
+    .name{
+      font-size: 36px;
+      line-height: 36px;
+      padding-bottom: 10px;
+    }
+  }
+}
+
+#about{
+  padding: 0 15px;
+  @include clearfix;
+  // @include susy-grid-background;
+  hgroup{
+    .avatar{
+      div{
+        margin: 15px auto 0;
+        width: 145px;
+        height: 145px;
+        overflow: hidden;
+        @include border-radius(150px);
+        border: 5px solid $off-white;
+        @include single-box-shadow(#999, 0px, 1px, 5px);
+        img{
+          width: 145px;
+          height: 154px;
+        }
+      }
+    }
+    @include span-columns(10 omega, 10);
+    @include at-breakpoint($break){
+      .avatar{
+        @include span-columns(4, 10);
+        div{
+          margin-top: 25px;
+        }
+      }
+      .intro{
+        @include span-columns(6 omega, 10);
+      }
+    }
+    @include at-breakpoint($break-wide){
+      .avatar{
+        @include span-columns(3, 10);
+      }
+      .intro{
+        @include span-columns(7 omega, 10);
+      }
+    }
+  }
+  h3{
+    clear: both;
+    color: $header-color;
+  }
+}
+
+.page-wrap{
+  padding: 1px 15px 5px;
+  @include clearfix();
+}
+
+.archive-post-full{
+  header{
+    position: relative;
+    padding: 1px 15px 0px;
+    .meta{
+      text-transform: uppercase;
+      font-size: .7em;
+      .tags{
+        float: right;
+        a{
+          @include custom-header(.9em);
+          text-decoration: none;
+          color: #fff;
+          background-color: $link-color;
+          margin: 0 0 0 2px;
+          padding: 4px;
+          @include border-radius(3px);
+          &:hover{
+            background-color: $link-hover;
+          }
+        }
+      }
+    }
+  }
+  header.graphic{
+    @include at-breakpoint($break){
+      padding: 1px 0 0;
+    }
+    .img-container{
+      display: none;
+      @include at-breakpoint($break){
+        display: block;
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+        @include border-radius(5px 5px 0px 0px);
+      }
+    }
+    h2{
+      @include at-breakpoint($break){
+        position: absolute;
+        bottom: 25px;
+        padding: 2px 0;
+        margin: 0;
+        left: 0;
+        width: 100%;
+        background-color: $link-hover;
+        @include opacity(.75);
+        span{
+          display: block;
+          color: #fff;
+          padding: 0 15px;
+        }
+      }
+    }
+    .meta{
+      @include at-breakpoint($break){
+        height: 20px;
+        padding: 5px 15px 0;
+      }
+    }
+  }
+
+  .post-content{
+    padding: 1px 0;
+    margin: 0px 15px;
+  }
+}
+
+.filter-bar{
+  @include inline-block-list();
+  ul{
+    margin: 0 0 10px 0;
+    padding: 0 0 10px 0;
+    border-bottom: 1px dotted #ddd;
+  }
+
+  li{
+    cursor: pointer;
+    text-transform: uppercase;
+    @include custom-header(.6em);
+    color: #fff;
+    background-color: $link-color;
+    margin: 0;
+    padding: 4px;
+    @include border-radius(3px);
+    &:hover{
+      background-color: $link-hover;
+    }
+    &.active{
+      background-color: $link-hover;
+    }
+    @include at-breakpoint($break){
+      font-size: .9em;
+    }
+  }
+}
+.archive-post-teaser{
+  @include border-radius(3px);
+  background-color:  $off-white;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 10px;
+  h3{
+    margin: .5em 0;
+  }
+  time{
+    text-transform: uppercase;
+    font-size: .7em;color: #fff;
+    background-color: $link-color;
+    padding: 4px;
+    @include border-radius(3px);
+  }
+  img{
+    display: none;
+  }
+  @include at-breakpoint($break 10 $break-wide){
+    @include clearfix();
+    margin-bottom: 15px;
+    img{
+      @include span-columns(3, 10);
+      display: block;
+    }
+    .teaser-inner-img{
+      @include span-columns(7 omega, 10);
+    }
+  }
+  @include at-breakpoint($break-wide){
+    @include border-box-sizing;
+    @include span-columns(5, 10);
+    @include nth-omega(2n);
+    margin: 0 0 1.5% 0;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    img{
+      display: block;
+      width: 100%;
+      // position: absolute;
+      // top: 0;
+      // left: 0
+    }
+    .teaser-inner-img{
+      @include opacity(.9);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: $off-white;
+      padding: 0 10px 10px;
+      // margin-top: 40%;
+    }
+    .teaser-inner{
+      @include opacity(.9);
+      padding: 10px;
+    }
+  }
+}
+
+.contact-form{
+  .field{
+    margin-bottom: 10px;
+  }
+  input[type="text"],
+  textarea{
+    width: 100%;
+    @include border-radius(3px);
+    border: 1px solid #ddd;
+    padding: 5px;
+  }
+  input[type="submit"]{
+    @include border-radius(3px);
+    border: none;
+    color: $off-white;
+    background-color: $link-color;
+    &:hover{
+      background-color: $link-hover;
+    }
+  }
+  label{
+    text-transform: uppercase;
+    font-size: .8em;
+    &.error{
+      text-transform: none;
+      font-size: .9em;
+      color: #DB2E2E;
+    }
+  }
+  @include at-breakpoint($break-wide){
+    @include span-columns(8 omega, 10);
+  }
+}
+.contact-links{
+  [class^="icon-"]:before,
+  [class*=" icon-"]:before{
+    color: $link-hover;
+    padding: 0;
+    font-size: 1.5em;
+  }
+  ul{
+    @include at-breakpoint(0 10 $break-wide){
+      @include inline-block-list();
+      margin-top: .8em;
+    }
+    margin-top: 1.4em;
+    list-style: none;
+    padding: 0;
+    li{
+      padding: 3px 5px;
+      margin: 0 0 10px 0;
+      @include border-radius(3px);
+      border: 1px solid $link-hover;
+      @include at-breakpoint(0 10 $break-wide){
+        margin: 0 10px 10px 0;
+      }
+
+      span{
+        font-size: 1em;
+      }
+    }
+  }
+  @include at-breakpoint($break-wide){
+    @include span-columns(2, 10);
+  }
+}
